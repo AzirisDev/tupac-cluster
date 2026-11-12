@@ -23,7 +23,7 @@ spec:
            # - configMapRef:
            #   name: linkding-configmap
             - secretRef:
-              name: linkding-container-env
+               name: linkding-container-env
           image: sissbruecker/linkding:1.47.0
           ports:
             - containerPort: 9090
