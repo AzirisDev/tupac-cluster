@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: ldingress.azimsattykov.net
+    - host: ldingress.azimsattykov.org
       http:
         paths:
           - backend:
