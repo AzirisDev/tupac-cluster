@@ -28,3 +28,26 @@ spec:
   values:
     grafana:
       adminPassword: azim
+      ingress:
+        enabled: true
+
+        ingressClassName: traefik
+
+        ## Hosts must be provided if Ingress is enabled.
+        ##
+        hosts: 
+          - grafana.azimsattykov.org
+
+        ## Paths to use for ingress rules - one path should match the alertmanagerSpec.routePrefix
+        ##
+        paths: /
+
+        ## TLS configuration for Alertmanager Ingress
+        ## Secret must be manually created in the namespace
+        ##
+        tls: []
+        # - secretName: alertmanager-general-tls
+        #   hosts:
+        #   - alertmanager.example.com
+
+
