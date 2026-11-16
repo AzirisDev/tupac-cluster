@@ -12,10 +12,10 @@ spec:
       labels:
         app: audiobookshelf
     spec:
-     # securityContext:
-     #   fsGroup: 33 # www-data group ID
-     #   runAsUser: 33 # www-data group ID
-     #   runAsGroup: 33 # www-data group ID
+      securityContext:
+        fsGroup: 1000 # non-root user ID
+        runAsUser: 1000 # non-root user ID
+        runAsGroup: 1000 # non-root user ID
       containers:
         - name: audiobookshelf
           envFrom:
@@ -26,8 +26,8 @@ spec:
           image: advplyr/audiobookshelf:2.37.0
           ports:
             - containerPort: 3005
-          #securityContext:
-          #  allowPrivilegeEscalation: false
+          securityContext:
+            allowPrivilegeEscalation: false
           volumeMounts:
             - mountPath: /etc/linkding/data
               name: audiobookshelf-data
