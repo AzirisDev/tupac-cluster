@@ -4,3 +4,4 @@ metadata:
   name: audiobookshelf-configmap
 data:
   TZ: "Asia/Almaty"
+  PORT: "3005"
